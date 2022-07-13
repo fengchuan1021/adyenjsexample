@@ -11,7 +11,7 @@ const redirectResult = urlParams.get('redirectResult');
 async function startCheckout() {
 	try {
 	    // Init Sessions
-		const checkoutSessionResponse = await callServer(`/api/payment/getSession?ordersRef=${orderSref}`);
+		const checkoutSessionResponse = await callServer("/api/payment/getSession",{"ordersRef":123456});
 
         // Create AdyenCheckout using Sessions response
 		const checkout = await createAdyenCheckout(checkoutSessionResponse)
